@@ -1,5 +1,6 @@
 from datetime import datetime
-from enum import Enum
+from enum import StrEnum
+from typing import TYPE_CHECKING
 from uuid import UUID, uuid4
 
 from sqlalchemy import DateTime, Enum as SqlEnum, ForeignKey, String, Text, func
@@ -8,8 +9,12 @@ from sqlalchemy.types import Uuid
 
 from app.db.base import Base
 
+if TYPE_CHECKING:
+    from app.models.job_analysis import JobAnalysis
+    from app.models.user import User
 
-class ApplicationStatus(str, Enum):
+
+class ApplicationStatus(StrEnum):
     SAVED = "SAVED"
     APPLIED = "APPLIED"
     INTERVIEW = "INTERVIEW"
