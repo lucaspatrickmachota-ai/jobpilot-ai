@@ -4,6 +4,10 @@ on:
   push:
   pull_request:
 
+concurrency:
+  group: jobpilot-ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   backend:
     runs-on: ubuntu-latest
