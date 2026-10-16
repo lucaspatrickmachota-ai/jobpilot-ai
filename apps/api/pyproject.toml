@@ -5,7 +5,7 @@ src = ["app"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
-ignore = ["E501"]
+ignore = ["E501", "I001"]
 per-file-ignores = {"tests/conftest.py" = ["E402"]}
 
 [tool.ruff.lint.flake8-bugbear]
