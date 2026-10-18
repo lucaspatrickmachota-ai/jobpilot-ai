@@ -6,5 +6,5 @@ export default defineConfig({
   forbidOnly: Boolean(process.env.CI),
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? 'github' : 'list',
-  use: { ...devices['Desktop Chrome'], baseURL: 'http://127.0.0.1:3000', trace: 'retain-on-failure' },
+  use: { ...devices['Desktop Chrome'], baseURL: 'http://localhost:3000', trace: 'retain-on-failure' },
 });
